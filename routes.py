@@ -46,7 +46,7 @@ def verify_mfa():
     if 'username' in session and session.get('mfa_required'):
         user = User.query.filter_by(username=session['username']).first()
 
-        # Check if the entered MFA matches
+        # Check if the entered MFA match
         if user and user.mfa == mfa_token:
             session.pop('mfa_required', None)  # MFA passed, remove requirement
             print(f"MFA verification successful for user: {user.username}")
@@ -73,3 +73,4 @@ def payment():
 def logout():
     session.pop('username', None)
     return jsonify({"message": "Logged out successfully!"}), 200
+
