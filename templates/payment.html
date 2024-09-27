@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Payment Portal</h1>
+    <p>You are now logged in and can make a payment.</p>
+    <button onclick="sendPayment()">Send Payment</button>
+    <p id="payment-message"></p>
+
+    <!-- Add the Logout Button -->
+    <button id="logout-button" onclick="logout()">Logout</button>
+
+    <!-- Ensure that app.js is correctly linked -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
